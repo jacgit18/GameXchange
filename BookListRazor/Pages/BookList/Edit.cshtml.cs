@@ -18,21 +18,25 @@ namespace BookListRazor.Pages.BookList
         }
 
         [BindProperty]
-        public Book Book { get; set; }
+        public AccountDbGenerator AccountDbGenerator { get; set; }
 
         public async Task OnGet(int id)
         {
-            Book = await _db.Book.FindAsync(id);
+            AccountDbGenerator = await _db.AccountDbGenerator.FindAsync(id);
         }
 
         public async Task<IActionResult> OnPost()
         {
             if (ModelState.IsValid)
             {
-                var BookFromDb = await _db.Book.FindAsync(Book.Id);
-                BookFromDb.Name = Book.Name;
-                BookFromDb.ISBN = Book.ISBN;
-                BookFromDb.Author = Book.Author;
+                var BookFromDb = await _db.AccountDbGenerator.FindAsync(AccountDbGenerator.Id);
+                BookFromDb.UserName = AccountDbGenerator.UserName;
+                BookFromDb.Password = AccountDbGenerator.Password;
+                BookFromDb.AccountType = AccountDbGenerator.AccountType;
+                BookFromDb.BillingAddress = AccountDbGenerator.BillingAddress;
+                BookFromDb.PaymentInfo = AccountDbGenerator.PaymentInfo;
+                BookFromDb.PhoneNumber = AccountDbGenerator.PhoneNumber;
+                BookFromDb.RegisterDate = AccountDbGenerator.RegisterDate;
 
                 await _db.SaveChangesAsync();
 

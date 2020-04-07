@@ -7,14 +7,19 @@ $(document).ready(function () {
 function loadDataTable() {
     dataTable = $('#DT_load').DataTable({
         "ajax": {
-            "url": "/api/book",
+            "url": "/api/account",
             "type": "GET",
             "datatype": "json"
         },
         "columns": [
-            { "data": "name", "width": "20%" },
-            { "data": "author", "width": "20%" },
-            { "data": "isbn", "width": "20%" },
+            { "data": "username", "width": "20%" },
+            { "data": "password", "width": "20%" },
+            { "data": "accounttype", "width": "20%" },
+            { "data": "billingaddress", "width": "20%" },
+            { "data": "paymentinfo", "width": "20%" },
+            { "data": "phonenumber", "width": "20%" },
+            { "data": "registerdate", "width": "20%" },
+
             {
                 "data": "id",
                 "render": function (data) {
@@ -24,7 +29,7 @@ function loadDataTable() {
                         </a>
                         &nbsp;
                         <a class='btn btn-danger text-white' style='cursor:pointer; width:70px;'
-                            onclick=Delete('/api/book?id='+${data})>
+                            onclick=Delete('/api/account?id='+${data})>
                             Delete
                         </a>
                         </div>`;

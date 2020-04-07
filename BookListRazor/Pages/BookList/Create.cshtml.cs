@@ -18,7 +18,7 @@ namespace BookListRazor.Pages.BookList
         }
 
         [BindProperty]
-        public Book Book { get; set; }
+        public AccountDbGenerator AccountDbGenerator { get; set; }
 
         public void OnGet()
         {
@@ -29,7 +29,7 @@ namespace BookListRazor.Pages.BookList
         {
             if (ModelState.IsValid)
             {
-                await _db.Book.AddAsync(Book);
+                await _db.AccountDbGenerator.AddAsync(AccountDbGenerator);
                 await _db.SaveChangesAsync();
                 return RedirectToPage("Index");
             }

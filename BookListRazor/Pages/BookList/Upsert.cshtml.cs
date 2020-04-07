@@ -19,11 +19,11 @@ namespace BookListRazor.Pages.BookList
         }
 
         [BindProperty]
-        public Book Book { get; set; }
+        public AccountDbGenerator AccountDbGenerator { get; set; }
 
         public async Task<IActionResult> OnGet(int? id)
         {
-            Book = new Book();
+            AccountDbGenerator = new AccountDbGenerator();
             if (id == null)
             {
                 //create
@@ -31,8 +31,8 @@ namespace BookListRazor.Pages.BookList
             }
 
             //update
-            Book = await _db.Book.FirstOrDefaultAsync(u => u.Id == id);
-            if (Book == null)
+            AccountDbGenerator = await _db.AccountDbGenerator.FirstOrDefaultAsync(u => u.Id == id);
+            if (AccountDbGenerator == null)
             {
                 return NotFound();
             }
@@ -44,13 +44,13 @@ namespace BookListRazor.Pages.BookList
             if (ModelState.IsValid)
             {
 
-                if (Book.Id == 0)
+                if (AccountDbGenerator.Id == 0)
                 {
-                    _db.Book.Add(Book);
+                    _db.AccountDbGenerator.Add(AccountDbGenerator);
                 }
                 else
                 {
-                    _db.Book.Update(Book);
+                    _db.AccountDbGenerator.Update(AccountDbGenerator);
                 }
 
                 await _db.SaveChangesAsync();
