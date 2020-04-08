@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 
-namespace GameXchange.Pages.BookList
+namespace GameXchange.Pages.AccountList
 {
     public class UpsertModel : PageModel
     {

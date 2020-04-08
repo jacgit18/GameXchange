@@ -6,7 +6,7 @@ using GameXchange.Model;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace GameXchange.Pages.BookList
+namespace GameXchange.Pages.AccountList
 {
     public class EditModel : PageModel
     {
