@@ -28,12 +28,12 @@ namespace GameXchange.Controllers
         [HttpDelete]
         public async Task<IActionResult> Delete(int id)
         {
-            var bookFromDb = await _db.AccountDbGenerator.FirstOrDefaultAsync(u => u.Id == id);
-            if (bookFromDb == null)
+            var accountFromDb = await _db.AccountDbGenerator.FirstOrDefaultAsync(u => u.Id == id);
+            if (accountFromDb == null)
             {
                 return Json(new { success = false, message = "Error while Deleting" });
             }
-            _db.AccountDbGenerator.Remove(bookFromDb);
+            _db.AccountDbGenerator.Remove(accountFromDb);
             await _db.SaveChangesAsync();
             return Json(new { success = true, message = "Delete successful" });
         }

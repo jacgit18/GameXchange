@@ -27,12 +27,12 @@ namespace GameXchange.Pages.AccountList
 
         public async Task<IActionResult> OnPostDelete(int id)
         {
-            var book = await _db.AccountDbGenerator.FindAsync(id);
-            if (book == null)
+            var account = await _db.AccountDbGenerator.FindAsync(id);
+            if (account == null)
             {
                 return NotFound();
             }
-            _db.AccountDbGenerator.Remove(book);
+            _db.AccountDbGenerator.Remove(account);
             await _db.SaveChangesAsync();
 
             return RedirectToPage("Index");

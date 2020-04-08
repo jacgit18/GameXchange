@@ -29,14 +29,14 @@ namespace GameXchange.Pages.AccountList
         {
             if (ModelState.IsValid)
             {
-                var BookFromDb = await _db.AccountDbGenerator.FindAsync(AccountDbGenerator.Id);
-                BookFromDb.UserName = AccountDbGenerator.UserName;
-                BookFromDb.Password = AccountDbGenerator.Password;
-                BookFromDb.AccountType = AccountDbGenerator.AccountType;
-                BookFromDb.BillingAddress = AccountDbGenerator.BillingAddress;
-                BookFromDb.PaymentInfo = AccountDbGenerator.PaymentInfo;
-                BookFromDb.PhoneNumber = AccountDbGenerator.PhoneNumber;
-                BookFromDb.RegisterDate = AccountDbGenerator.RegisterDate;
+                var AccountFromDb = await _db.AccountDbGenerator.FindAsync(AccountDbGenerator.Id);
+                AccountFromDb.UserName = AccountDbGenerator.UserName;
+                AccountFromDb.Password = AccountDbGenerator.Password;
+                AccountFromDb.AccountType = AccountDbGenerator.AccountType;
+                AccountFromDb.BillingAddress = AccountDbGenerator.BillingAddress;
+                AccountFromDb.PaymentInfo = AccountDbGenerator.PaymentInfo;
+                AccountFromDb.PhoneNumber = AccountDbGenerator.PhoneNumber;
+                AccountFromDb.RegisterDate = AccountDbGenerator.RegisterDate;
 
                 await _db.SaveChangesAsync();
 
