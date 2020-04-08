@@ -7,32 +7,46 @@
 <head>
 
     <meta name="viewport" content="width=device-width, intial-scale=1.0" />
-    <link href="my.css" rel="stylesheet" />
+
+    <script src="~/js/site.js" asp-append-version="true"></script>
 
 </head>
 <body>
-
-
     <div id="container">
-        <div id="header">
-        </div>
+
 
         <div id="content">
-
             <center>
+                <form action="http://www.WebsiteDevelopmentBook.com/FormEcho.php" method="post" onsubmit="return check_info()">
 
-                <fieldset class="feild">
-                  
-
-
-                </fieldset><br />
+                    <fieldset class="feild">
+                        <legend><b>Existing Account</b> </legend>
+                        <label for="user">Username:</label> <input type="text" id="username" name="username" /><br />
+                        <label for="pass"> Password:</label> <input type="password" id="password" name="password" /><br />
+                      
+                    </fieldset><br />
+                </form>
             </center>
 
 
+            <center>
+                <form name="myForm" action="http://www.WebsiteDevelopmentBook.com/FormEcho.php" method="post">
 
+                    <fieldset class="feild">
+                        <legend><b>New Account</b> </legend>
+
+                        <div class="col-3">
+                            <a asp-page="/AccountList/Create" class="btn btn-info form-control text-white">Create New Account</a>
+                        </div>
+
+                    </fieldset><br />
+                </form>
+            </center>
         </div>
 
     </div>
+
+
 
 </body>
 </html>
