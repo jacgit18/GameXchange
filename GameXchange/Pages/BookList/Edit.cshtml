@@ -1,0 +1,92 @@
+﻿@page
+@model GameXchange.Pages.BookList.EditModel
+
+
+
+<br />
+<h2 class="text-info">Edit Book</h2>
+<br />
+
+<div class="border container" style="padding:30px;">
+    <form method="post">
+        <input type="hidden" asp-for="AccountDbGenerator.Id" />
+        <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+        <div class="form-group row">
+            <div class="col-3">
+                <label asp-for="AccountDbGenerator.UserName"></label>
+            </div>
+            <div class="col-6">
+                <input asp-for="AccountDbGenerator.UserName" class="form-control" />
+            </div>
+            <span asp-validation-for="AccountDbGenerator.UserName" class="text-danger"></span>
+        </div>
+        <div class="form-group row">
+            <div class="col-3">
+                <label asp-for="AccountDbGenerator.Password"></label>
+            </div>
+            <div class="col-6">
+                <input asp-for="AccountDbGenerator.Password" class="form-control" />
+            </div>
+            <span asp-validation-for="AccountDbGenerator.Password" class="text-danger"></span>
+        </div>
+        <div class="form-group row">
+            <div class="col-3">
+                <label asp-for="AccountDbGenerator.AccountType"></label>
+            </div>
+            <div class="col-6">
+                <input asp-for="AccountDbGenerator.AccountType" class="form-control" />
+            </div>
+            <span asp-validation-for="AccountDbGenerator.AccountType" class="text-danger"></span>
+        </div>
+        <div class="form-group row">
+            <div class="col-3">
+                <label asp-for="AccountDbGenerator.BillingAddress"></label>
+            </div>
+            <div class="col-6">
+                <input asp-for="AccountDbGenerator.BillingAddress" class="form-control" />
+            </div>
+            <span asp-validation-for="AccountDbGenerator.BillingAddress" class="text-danger"></span>
+        </div>
+        <div class="form-group row">
+            <div class="col-3">
+                <label asp-for="AccountDbGenerator.PaymentInfo"></label>
+            </div>
+            <div class="col-6">
+                <input asp-for="AccountDbGenerator.PaymentInfo" class="form-control" />
+            </div>
+            <span asp-validation-for="AccountDbGenerator.PaymentInfo" class="text-danger"></span>
+        </div>
+        <div class="form-group row">
+            <div class="col-3">
+                <label asp-for="AccountDbGenerator.PhoneNumber"></label>
+            </div>
+            <div class="col-6">
+                <input asp-for="AccountDbGenerator.PhoneNumber" class="form-control" />
+            </div>
+            <span asp-validation-for="AccountDbGenerator.PhoneNumber" class="text-danger"></span>
+        </div>
+        <div class="form-group row">
+            <div class="col-3">
+                <label asp-for="AccountDbGenerator.RegisterDate"></label>
+            </div>
+            <div class="col-6">
+                <input asp-for="AccountDbGenerator.RegisterDate" class="form-control" />
+            </div>
+            <span asp-validation-for="AccountDbGenerator.RegisterDate" class="text-danger"></span>
+        </div>
+
+
+        <div class="form-group row">
+            <div class="col-3 offset-3">
+                <input type="submit" value="Update" class="btn btn-primary form-control" />
+            </div>
+            <div class="col-3">
+                <a asp-page="Index" class="btn btn-success form-control">Back to List</a>
+            </div>
+        </div>
+    </form>
+</div>
+
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+}
