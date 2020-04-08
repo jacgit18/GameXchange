@@ -10,11 +10,11 @@ namespace GameXchange.Controllers
 {
     [Route("api/Account")]
     [ApiController]
-    public class BookController : Controller
+    public class AccountController : Controller
     {
         private readonly ApplicationDbContext _db;
 
-        public BookController(ApplicationDbContext db)
+        public AccountController(ApplicationDbContext db)
         {
             _db = db;
         }
