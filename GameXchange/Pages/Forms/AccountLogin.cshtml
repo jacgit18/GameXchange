@@ -7,7 +7,7 @@
 <head>
 
     <meta name="viewport" content="width=device-width, intial-scale=1.0" />
-
+    <link rel="stylesheet" href="~/css/login.css" />
     <script src="~/js/site.js" asp-append-version="true"></script>
 
 </head>
@@ -18,12 +18,29 @@
         <div id="content">
             <center>
                 <form action="http://www.WebsiteDevelopmentBook.com/FormEcho.php" method="post" onsubmit="return check_info()">
-
                     <fieldset class="feild">
-                        <legend><b>Existing Account</b> </legend>
-                        <label for="user">Username:</label> <input type="text" id="username" name="username" /><br />
-                        <label for="pass"> Password:</label> <input type="password" id="password" name="password" /><br />
-                      
+
+
+                        <div class="login-box">
+                            <h2>Existing Account</h2>
+                            <div class="user-box">
+                                <input type="text" id="username" name="username" /><br />
+                                <label for="user">Username:</label>
+
+                            </div>
+                            <div class="user-box">
+                                <input type="password" id="password" name="password" /><br />
+                                <label for="pass">Password:</label>
+                            </div>
+                            <a href="#">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <input type="submit" value="Click to Submit" />
+
+                            </a>
+                        </div>
                     </fieldset><br />
                 </form>
             </center>
