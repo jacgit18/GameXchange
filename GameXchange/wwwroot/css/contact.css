@@ -1,0 +1,57 @@
+﻿@page
+
+@model GameXchange.CSSModel @ {
+    ViewData ["Title"] = "CSS";
+}
+
+<h1 > CSS</h1 >
+
+body {
+}
+
+.chatbtn {
+    background-color: #CBCF51;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 30px;
+    border-radius: 12px;
+}
+
+
+    .chatbtn:hover {
+        background-color: #c6cc08;
+        color: white;
+    }
+
+table {
+    width: 100%;
+    text-align: center;
+}
+
+.title {
+    font-size: 50pt;
+    COLOR: black;
+}
+
+hr {
+    color: black;
+    width: 20%;
+    height: index;
+}
+
+img {
+    height: 150px;
+    width: 150px;
+}
+
+.nameSize {
+    font-size: 40px;
+}
+
+span {
+    font-size: 20px;
+}
