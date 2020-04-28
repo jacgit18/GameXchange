@@ -43,7 +43,7 @@ hr {
     height: index;
 }
 
-img {
+.img {
     height: 150px;
     width: 150px;
 }
@@ -54,4 +54,10 @@ img {
 
 span {
     font-size: 20px;
+}
+
+
+.sns{
+    height: 50px;
+    width: 50px;
 }
