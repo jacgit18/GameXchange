@@ -9,6 +9,8 @@
 
     <meta name="viewport" content="width=device-width, intial-scale=1.0" />
     <link href="my.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="~/css/contact.css" />
+
 
 </head>
 <body>
@@ -21,10 +23,32 @@
                 <form name="myForm" action="http://www.WebsiteDevelopmentBook.com/FormEcho.php" method="post">
 
                     <fieldset class="feild">
-                        <legend><b>Contact</b> </legend>
-                        <label for="email">Email:</label> <label>GamExchange@gmail.com</label> <br />
-                        <label for="phone"> Phone:</label><label>718-555-5555</label> <br />
-                    </fieldset><br />
+
+                        <table>
+                            <tr>
+                                <td colspan="2">
+                                    <b class="title">Contact Us</b> <br><hr>
+                                </td>
+                            </tr>
+                            <th><img src="~/Pic/email.png"></th>
+                            <th><img src="~/Pic/call.png"></th>
+
+                            </tr>
+                            <tr>
+                                <td>
+                                    <b class="nameSize">E-Mail</b><br><br><span>GamExchange@gmail.com</span>
+                                </td>
+                                <td><b class="nameSize">Contact</b><br><br><span>718-555-5555</span></td>
+                            </tr>
+
+
+                        </table>
+                        <br /><br /><br />
+
+
+                        <button class="chatbtn"><b>Start Chatting Now</b></button>
+
+                    </fieldset> <br />
                 </form>
             </center>
         </div>
