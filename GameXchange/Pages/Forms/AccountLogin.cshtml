@@ -2,16 +2,13 @@
 @model GameXchange.Pages.Forms.AccountLoginModel
 @{
 }
-<!DOCTYPE html>
-<html>
-<head>
+
 
     <meta name="viewport" content="width=device-width, intial-scale=1.0" />
     <link rel="stylesheet" href="~/css/login.css" />
     <script src="~/js/site.js" asp-append-version="true"></script>
 
-</head>
-<body>
+
     <div id="container">
 
 
@@ -21,8 +18,9 @@
                     <fieldset class="feild">
 
 
+
                         <div class="login-box">
-                            <h2>Existing Account</h2>
+                            <h2><b>Existing Account</b></h2>
                             <div class="user-box">
                                 <input type="text" id="username" name="username" /><br />
                                 <label for="user">Username:</label>
@@ -32,38 +30,35 @@
                                 <input type="password" id="password" name="password" /><br />
                                 <label for="pass">Password:</label>
                             </div>
-                            <a href="#">
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                                <input type="submit" value="Click to Submit" />
+                            <div class="col-5">
+                                <h3>
+                                    <a class="btn btn-info form-control text-white" href="#">
 
-                            </a>
+
+                                        <input class="btn text-white" type="submit" value="Login" />
+
+                                    </a>
+                                </h3>
+
+                            </div>
+
+                            <br /><br />
+
+                            <h2><b>New Account</b> </h2>
+
+                            <div class="col-8">
+                                <a asp-page="/AccountList/Create" class="btn btn-info form-control text-white">Create New Account</a>
+                            </div>
+
+
                         </div>
                     </fieldset><br />
                 </form>
             </center>
 
 
-            <center>
-                <form name="myForm" action="http://www.WebsiteDevelopmentBook.com/FormEcho.php" method="post">
 
-                    <fieldset class="feild">
-                        <legend><b>New Account</b> </legend>
-
-                        <div class="col-3">
-                            <a asp-page="/AccountList/Create" class="btn btn-info form-control text-white">Create New Account</a>
-                        </div>
-
-                    </fieldset><br />
-                </form>
-            </center>
         </div>
 
     </div>
 
-
-
-</body>
-</html>
