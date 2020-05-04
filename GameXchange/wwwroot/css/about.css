@@ -1,10 +1,5 @@
-﻿@page
+﻿
 
-@model GameXchange.CSSModel @ {
-    ViewData ["Title"] = "CSS";
-}
-
-<h1 > CSS</h1 >
 
 body {
 }

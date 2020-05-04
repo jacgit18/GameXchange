@@ -13,6 +13,8 @@ namespace GameXchange
     {
         public static void Main(string[] args)
         {
+
+
             CreateHostBuilder(args).Build().Run();
         }
 
