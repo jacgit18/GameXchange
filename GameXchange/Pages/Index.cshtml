@@ -1,20 +1,35 @@
-﻿@page
+﻿
+@page
 @model IndexModel
 @{
     ViewData["Title"] = "Home page";
 }
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
     <link rel="stylesheet" href="~/css/my.css" />
     <script src="~/js/site.js" asp-append-version="true"></script>
+</head>
 
-    <div id="slideshow">
-        <div>
-            <img src="~/Pic/FIFA-20-Champion-Edition.jpg" />
-        </div>
-        <div>
-            <img src="~/Pic/GodofWar.jpg" />
-        </div>
-        <div>
-            <img src="~/Pic/Red-Dead-Redemption-2.jpg" />
+
+<body>
+    <div class="column1">
+        <img src="~/Pic/Logo.jpeg" width="550" height="400" />
+    </div>
+    <div class="column2">
+        <div id="slideshow">
+            <div>
+                <img src="~/Pic/FIFA-20-Champion-Edition.jpg" width="300" height="400" />
+            </div>
+            <div>
+                <img src="~/Pic/GodofWar.jpg" width="300" height="400" />
+            </div>
+            <div>
+                <img src="~/Pic/Red-Dead-Redemption-2.jpg" width="300" height="400" />
+            </div>
         </div>
     </div>
+</body>
+</html>
