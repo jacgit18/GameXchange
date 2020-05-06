@@ -13,12 +13,15 @@ function loadDataTable() {
         },
         "columns": [
             { "data": "username", "width": "20%" },
+            { "data": "emailconfirmation", "width": "20%" },
             { "data": "password", "width": "20%" },
             { "data": "accounttype", "width": "20%" },
             { "data": "billingaddress", "width": "20%" },
             { "data": "paymentinfo", "width": "20%" },
             { "data": "phonenumber", "width": "20%" },
             { "data": "registerdate", "width": "20%" },
+            { "data": "logindate", "width": "20%" },
+
 
             {
                 "data": "id",

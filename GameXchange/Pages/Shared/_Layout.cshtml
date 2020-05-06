@@ -6,6 +6,8 @@
     <title>@ViewData["Title"] - GameXchange</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    @*<link rel="stylesheet" href="~/css/Main.css" />*@
+    <link rel="stylesheet" href="~/css/head.css" />
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
@@ -13,6 +15,10 @@
 </head>
 <body>
     <header>
+        <div class="hero-image">
+            @*<img class="logo" src="~/Pic/Logo.jpeg">*@
+
+        </div>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
                 <a class="navbar-brand" asp-area="" asp-page="/Index">GameXchange</a>
@@ -51,7 +57,7 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
+    <footer id="footer" class="border-top footer text-muted">
         <div class="container">
             &copy; 2020 GameXchange, Inc &nbsp; &nbsp;<a asp-area="" asp-page="/OtherPgs/ContactUs">Contact Us</a>
             <a href="#">Scroll to Top</a>
