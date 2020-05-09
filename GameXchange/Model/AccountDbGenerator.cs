@@ -50,6 +50,32 @@ namespace GameXchange.Model
         [Column(TypeName = "varchar(30)")]
         public string LoginDate { get; set; }
 
+        public AccountDbGenerator() { }
 
+        public AccountDbGenerator(int Id, string lastName, string email)
+        {
+            this.Id = Id;
+            this.EmailConfirmation = EmailConfirmation;
+            this.Password = Password;
+            this.AccountType = AccountType;
+            this.BillingAddress = BillingAddress;
+            this.PaymentInfo = PaymentInfo;
+            this.PhoneNumber = PhoneNumber;
+            this.RegisterDate = RegisterDate;
+            this.LoginDate = LoginDate;
+        }
+
+        public override string ToString()
+        {
+            return $"{{{nameof(Id)}={Id}, {nameof(UserName)}={UserName}, " +
+                $"{nameof(EmailConfirmation)}={EmailConfirmation.ToString()}, " +
+                $"{nameof(Password)}={Password.ToString()}, " +
+                $"{nameof(AccountType)}={AccountType}, " +
+                $"{nameof(BillingAddress)}={BillingAddress.ToString()}, " +
+                $"{nameof(PaymentInfo)}={PaymentInfo}, " +
+                $"{nameof(PhoneNumber)}={PhoneNumber}, " +
+                $"{nameof(RegisterDate)}={RegisterDate}, " +
+                $"{nameof(LoginDate)}={LoginDate}, ";
+        }
     }
 }

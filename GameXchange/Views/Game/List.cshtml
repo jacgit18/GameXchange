@@ -1,0 +1,15 @@
+﻿@using GameXchange.Model
+@model IEnumerable<GameInfo>
+
+<div class="row marginTop">
+    @foreach (var game in Model)
+    {
+        <div>
+            <h4> Game Name: @game.Name</h4>
+            <p> Price: @game.GamePrice.ToString("c")</p>
+
+        </div>
+
+    }
+</div>
+

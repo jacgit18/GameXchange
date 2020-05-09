@@ -14,5 +14,8 @@ namespace GameXchange.Model
         }
 
         public DbSet<AccountDbGenerator> AccountDbGenerator { get; set; }
+        public DbSet<GameCategory> GameCategory { get; set; }
+        public DbSet<GameInfo> GameInfo { get; set; }
+
     }
 }
