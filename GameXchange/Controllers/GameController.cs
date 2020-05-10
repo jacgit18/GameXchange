@@ -1,5 +1,6 @@
 ﻿using GameXchange.Dao.Interface;
 using GameXchange.Model;
+using GameXchange.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -19,32 +20,38 @@ namespace GameXchange.Controllers
             _categoryRepo = categoryRepo;
         }
 
-        public ViewResult List(string category)
+        public ViewResult List()
         {
-            string _category = category;
-            IEnumerable<GameInfo> gameInfos;
-            string currentCategory = string.Empty;
+            ViewBag.Name = "DotNet, How?";
+            GameListViewModel vm = new GameListViewModel();
+            vm.GameInfos = _gameRepo.GameInfos;
+            vm.CurrentCategory = "GameCategory";
+            return View(vm);
 
-            if (string.IsNullOrEmpty(category))
-            {
-                gameInfos = _gameRepo.GameInfos.OrderBy(p => p.GameId);
-                currentCategory = "All drinks";
-            }
-            else
-            {
-                if (string.Equals("Alcoholic", _category, StringComparison.OrdinalIgnoreCase))
-                    gameInfos = _gameRepo.GameInfos.Where(p => p.Category.CategoryName.Equals("Alcoholic")).OrderBy(p => p.Name);
-                else
-                    gameInfos = _gameRepo.GameInfos.Where(p => p.Category.CategoryName.Equals("Non-alcoholic")).OrderBy(p => p.Name);
+            //string _category = category;
+            //IEnumerable<GameInfo> gameInfos;
+            //string currentCategory = string.Empty;
 
-                currentCategory = _category;
-            }
+            //if (string.IsNullOrEmpty(category))
+            //{
+            //    gameInfos = _gameRepo.GameInfos.OrderBy(p => p.GameId);
+            //    currentCategory = "All drinks";
+            //}
+            //else
+            //{
+            //    if (string.Equals("Alcoholic", _category, StringComparison.OrdinalIgnoreCase))
+            //        gameInfos = _gameRepo.GameInfos.Where(p => p.Category.CategoryName.Equals("Alcoholic")).OrderBy(p => p.Name);
+            //    else
+            //        gameInfos = _gameRepo.GameInfos.Where(p => p.Category.CategoryName.Equals("Non-alcoholic")).OrderBy(p => p.Name);
 
-            return View(new GamesListViewModel
-            {
-                GameInfos = gameInfos,
-                CurrentCategory = currentCategory
-            });
+            //    currentCategory = _category;
+            //}
+
+            //return View(new GamesListViewModel
+            //{
+            //    GameInfos = gameInfos,
+            //    CurrentCategory = currentCategory
+            //});
         }
 
         //public ViewResult Search(string searchString)
@@ -62,7 +69,7 @@ namespace GameXchange.Controllers
         //        gameInfos = _gameRepo.GameInfos.Where(p => p.Name.ToLower().Contains(_searchString.ToLower()));
         //    }
 
-        //    return View("~/Views/Drink/List.cshtml", new DrinksListViewModel { GameInfos = gameInfos, CurrentCategory = "All drinks" });
+        //    return View("~/Views/Game/List.cshtml", new DrinksListViewModel { GameInfos = gameInfos, CurrentCategory = "All drinks" });
         //}
 
         //public ViewResult Details(int gameId)

@@ -1,9 +1,11 @@
-﻿@using GameXchange.Model
-@model IEnumerable<GameInfo>
+﻿@using GameXchange.ViewModels
+@model GameListViewModel
 
-<div class="row marginTop">
-    @foreach (var game in Model)
-    {
+
+    <h2>@Model.CurrentCategory</h2>
+    @{
+        foreach (var game in Model.GameInfos)
+        { 
         <div>
             <h4> Game Name: @game.Name</h4>
             <p> Price: @game.GamePrice.ToString("c")</p>
@@ -11,5 +13,5 @@
         </div>
 
     }
-</div>
 
+}
