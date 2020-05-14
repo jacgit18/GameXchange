@@ -1,4 +1,4 @@
-﻿@page
+@page
 
 @model GameXchange.CSSModel @ {
     ViewData ["Title"] = "CSS";
@@ -7,6 +7,7 @@
 <h1 > CSS</h1 >
 
 body {
+    background-color: #192231;
 }
 
 .chatbtn {
@@ -43,7 +44,7 @@ hr {
     height: index;
 }
 
-.img {
+img {
     height: 150px;
     width: 150px;
 }
@@ -54,10 +55,4 @@ hr {
 
 span {
     font-size: 20px;
-}
-
-
-.sns{
-    height: 50px;
-    width: 50px;
 }
