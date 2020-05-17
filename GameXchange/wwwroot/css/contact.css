@@ -18,12 +18,12 @@ body {
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 30px;
+    font-size: 15pt;
     border-radius: 12px;
 }
 
 
-    .chatbtn:hover {
+ .chatbtn:hover {
         background-color: #c6cc08;
         color: white;
     }
@@ -34,7 +34,7 @@ table {
 }
 
 .title {
-    font-size: 50pt;
+    font-size: 20pt;
     COLOR: black;
 }
 
@@ -45,12 +45,12 @@ hr {
 }
 
 img {
-    height: 150px;
-    width: 150px;
+    height: 100px;
+    width: 100px;
 }
 
 .nameSize {
-    font-size: 40px;
+    font-size: 20pt;
 }
 
 span {
