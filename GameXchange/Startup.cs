@@ -7,11 +7,13 @@ using GameXchange.Dao.Repository;
 using GameXchange.Model;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 
 namespace GameXchange
 {
@@ -27,14 +29,20 @@ namespace GameXchange
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddTransient<IGameRepo, GameRepo>();
-            services.AddTransient<ICategoryRepo, CategoryRepo>();
-
-            services.AddMvc();
-
             services.AddDbContext<ApplicationDbContext>(option => option.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddControllersWithViews();
             services.AddRazorPages().AddRazorRuntimeCompilation();
+
+            services.AddTransient<IGameRepo, GameRepo>();
+            services.AddTransient<ICategoryRepo, CategoryRepo>();
+
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddScoped(sp => ShoppingCart.GetCart(sp));
+
+            services.AddMvc();
+            services.AddMemoryCache();
+            services.AddSession();
+        
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -63,6 +71,13 @@ namespace GameXchange
                 endpoints.MapControllers();
                 endpoints.MapRazorPages();
             });
+
+            app.UseDeveloperExceptionPage();
+            app.UseStatusCodePages();
+            app.UseStaticFiles();
+            app.UseSession();
+
+
             Dbinit.Seed(app);
         }
     }
