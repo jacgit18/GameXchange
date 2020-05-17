@@ -1,16 +1,28 @@
-﻿@using GameXchange.ViewModels
-@model GameListViewModel
+﻿
+
+<h2>@Model.CurrentCategory</h2>
+@{
+    foreach (var game in Model.GameInfos)
+    {
+
+        <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                @*<img src="@GameInfo.ImageThumbnailUrl" alt="" />*@
+
+                <div class="caption">
+                    <h3 class="pull-right">@game.GamePrice.ToString("c")</h3>
+
+                    <h3>
+                        <a>@game.Name</a>
+                    </h3>
+                    @*<p>@GameInfo.GameDescription</p>*@
+                </div>
 
 
-    <h2>@Model.CurrentCategory</h2>
-    @{
-        foreach (var game in Model.GameInfos)
-        { 
-        <div>
-            <h4> Game Name: @game.Name</h4>
-            <p> Price: @game.GamePrice.ToString("c")</p>
-
+            </div>
         </div>
+
+
 
     }
 

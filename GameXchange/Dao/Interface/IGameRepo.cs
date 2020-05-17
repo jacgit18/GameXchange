@@ -8,9 +8,9 @@ namespace GameXchange.Dao.Interface
 {
     public interface IGameRepo
     {
-        IEnumerable<GameInfo> GameInfos { get; set; }
+        IEnumerable<GameInfo> GameInfos { get;}
 
-        IEnumerable<GameInfo> GamePrices { get; set; }
+        IEnumerable<GameInfo> GamePrices { get; }
 
         GameInfo GetGameById(int gameId);
 

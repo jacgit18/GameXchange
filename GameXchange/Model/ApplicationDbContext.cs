@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 namespace GameXchange.Model
 {
     public class ApplicationDbContext : DbContext
+
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {

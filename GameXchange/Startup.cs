@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using GameXchange.Dao.Interface;
-using GameXchange.Dao.Mocks;
+using GameXchange.Dao.Repository;
 using GameXchange.Model;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -27,8 +27,8 @@ namespace GameXchange
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddTransient<IGameRepo, MockGameRepo>();
-            services.AddTransient<ICategoryRepo, MockCategoryRepo>();
+            services.AddTransient<IGameRepo, GameRepo>();
+            services.AddTransient<ICategoryRepo, CategoryRepo>();
 
             services.AddMvc();
 
@@ -63,6 +63,7 @@ namespace GameXchange
                 endpoints.MapControllers();
                 endpoints.MapRazorPages();
             });
+            Dbinit.Seed(app);
         }
     }
 }
