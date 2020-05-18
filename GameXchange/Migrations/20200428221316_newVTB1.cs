@@ -2,7 +2,7 @@
 
 namespace GameXchange.Migrations
 {
-    public partial class newdbv2 : Migration
+    public partial class newVTB1 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -18,7 +18,8 @@ namespace GameXchange.Migrations
                     BillingAddress = table.Column<string>(nullable: true),
                     PaymentInfo = table.Column<string>(nullable: true),
                     PhoneNumber = table.Column<string>(nullable: true),
-                    RegisterDate = table.Column<string>(nullable: true)
+                    RegisterDate = table.Column<string>(nullable: true),
+                    Version = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {

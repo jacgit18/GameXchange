@@ -10,7 +10,6 @@ namespace GameXchange.Model
 {
     public class AccountDbGenerator
     {
-
         [Key]
         public int Id { get; set; }
 
@@ -46,6 +45,7 @@ namespace GameXchange.Model
         [Column(TypeName = "varchar(30)")]
         public string RegisterDate { get; set; }
 
+        public string Version { get; set; }
         [DisplayName("Login Date")]
         [Column(TypeName = "varchar(30)")]
         public string LoginDate { get; set; }

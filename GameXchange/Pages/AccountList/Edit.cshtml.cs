@@ -37,6 +37,7 @@ namespace GameXchange.Pages.AccountList
                 AccountFromDb.PaymentInfo = AccountDbGenerator.PaymentInfo;
                 AccountFromDb.PhoneNumber = AccountDbGenerator.PhoneNumber;
                 AccountFromDb.RegisterDate = AccountDbGenerator.RegisterDate;
+                AccountFromDb.Version = AccountDbGenerator.Version;
 
                 await _db.SaveChangesAsync();
 
