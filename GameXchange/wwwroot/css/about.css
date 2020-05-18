@@ -1,10 +1,5 @@
-﻿@page
+﻿
 
-@model GameXchange.CSSModel @ {
-    ViewData ["Title"] = "CSS";
-}
-
-<h1 > CSS</h1 >
 
 body {
 }
@@ -21,12 +16,12 @@ p{
 
 table {
     text-align: center;
-    font-size: 20px;
+    font-size: 15pt;
     
 }
 
 .title {
-    font-size: 40px;
+    font-size: 20pt;
 }
 
 th {
@@ -39,4 +34,8 @@ th {
 }
 td {
     border: 1px solid #D3D3D3;
+}
+
+span{
+    font-size: 12pt;
 }

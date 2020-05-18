@@ -3,14 +3,16 @@ using GameXchange.Model;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GameXchange.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200501001413_emailadd")]
+    partial class emailadd
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -34,9 +36,6 @@ namespace GameXchange.Migrations
                     b.Property<string>("EmailConfirmation")
                         .HasColumnType("nvarchar(250)");
 
-                    b.Property<string>("LoginDate")
-                        .HasColumnType("varchar(30)");
-
                     b.Property<string>("Password")
                         .HasColumnType("varchar(30)");
 
@@ -52,9 +51,6 @@ namespace GameXchange.Migrations
                     b.Property<string>("UserName")
                         .IsRequired()
                         .HasColumnType("nvarchar(250)");
-
-                    b.Property<string>("Version")
-                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 

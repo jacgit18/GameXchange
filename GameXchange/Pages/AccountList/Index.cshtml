@@ -4,13 +4,145 @@
 
 <br />
 <div class="container row p-0 m-0">
-    <div class="col-9">
-        <h2 class="text-info">Account List</h2>
-    </div>
-    <div class="col-3">
-        <a asp-page="Create" class="btn btn-info form-control text-white">Create New Account</a>
-    </div>
+        <div class="col-9">
+            <h2 class="text-info">Register List</h2>
+        </div>
+        <div class="col-3">
+            <a asp-page="Create" class="btn btn-info form-control text-white">Create New Account</a>
+        </div>
 
+
+        <div class="col-12 border p-3 mt-3">
+            <form method="post">
+                @if (Model.AccountDbGenerators.Count() > 0)
+                {
+                    <table class="table table-striped border ">
+                        <tr class="table-secondary">
+                            <th>
+                                <label asp-for="AccountDbGenerators.FirstOrDefault().UserName"></label>
+                            </th>
+                            <th>
+                                <label asp-for="AccountDbGenerators.FirstOrDefault().EmailConfirmation"></label>
+                            </th>
+                            <th>
+                                <label asp-for="AccountDbGenerators.FirstOrDefault().Password"></label>
+                            </th>
+                            <th>
+                                <label asp-for="AccountDbGenerators.FirstOrDefault().AccountType"></label>
+                            </th>
+                            <th>
+                                <label asp-for="AccountDbGenerators.FirstOrDefault().BillingAddress"></label>
+                            </th>
+                            <th>
+                                <label asp-for="AccountDbGenerators.FirstOrDefault().PaymentInfo"></label>
+                            </th>
+                            <th>
+                                <label asp-for="AccountDbGenerators.FirstOrDefault().PhoneNumber"></label>
+                            </th>
+                            <th>
+                                <label asp-for="AccountDbGenerators.FirstOrDefault().RegisterDate"></label>
+                            </th>
+                            <th>
+
+                            </th>
+                        </tr>
+                        @foreach (var item in Model.AccountDbGenerators)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(m => item.UserName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(m => item.EmailConfirmation)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(m => item.Password)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(m => item.AccountType)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(m => item.BillingAddress)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(m => item.PaymentInfo)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(m => item.PhoneNumber)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(m => item.RegisterDate)
+                                </td>
+                                <td>
+                                    <button asp-page-handler="Delete" asp-route-id="@item.Id" onclick="return confirm('Are you sure you want to delete?')" class="btn btn-danger btn-sm">Delete</button>
+                                    <a asp-page="Edit" asp-route-id="@item.Id" class="btn btn-success btn-sm text-white">Edit</a>
+                                </td>
+                            </tr>
+                        }
+                    </table>
+                }
+                else
+                {
+                    <p>No Accounts available.</p>
+                }
+            </form>
+        </div>
+
+        <div class="col-9">
+            <h2 class="text-info">Login List</h2>
+        </div>
+        <div class="col-12 border p-3 mt-3">
+            <form method="post">
+                @if (Model.AccountDbGenerators.Count() > 0)
+                {
+                    <table class="table table-striped border">
+                        <tr class="table-secondary">
+                            <th>
+                                <label asp-for="AccountDbGenerators.FirstOrDefault().UserName"></label>
+                            </th>
+                            <th>
+                                <label asp-for="AccountDbGenerators.FirstOrDefault().EmailConfirmation"></label>
+                            </th>
+                            <th>
+                                <label asp-for="AccountDbGenerators.FirstOrDefault().Password"></label>
+                            </th>
+                            <th>
+                                <label asp-for="AccountDbGenerators.FirstOrDefault().LoginDate"></label>
+                            </th>
+                            <th>
+
+                            </th>
+                        </tr>
+                        @foreach (var item in Model.AccountDbGenerators)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(m => item.UserName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(m => item.EmailConfirmation)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(m => item.Password)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(m => item.LoginDate)
+                                </td>
+                                <td>
+                                    <button asp-page-handler="Delete" asp-route-id="@item.Id" onclick="return confirm('Are you sure you want to delete?')" class="btn btn-danger btn-sm">Delete</button>
+                                    <a asp-page="Edit" asp-route-id="@item.Id" class="btn btn-success btn-sm text-white">Edit</a>
+                                </td>
+                            </tr>
+                        }
+                    </table>
+                }
+                else
+                {
+                    <p>No Accounts available.</p>
+                }
+            </form>
+        </div>
+    </div>
 
     <div class="col-12 border p-3 mt-3">
         <form method="post">
@@ -114,10 +246,35 @@
     </div>
 </div>*@
 
+@*<div class="col-12" style="text-align:center">
+            <br />
+            <span class="h3 text-info">OR</span>
+            <br /><br />
+        </div>
+        <div class="col-12 border p-3">
+
+            <table id="DT_load" class="table table-striped table-bordered" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th> Author</th>
+                        <th> ISBN</th>
+                        <th>Name</th>
+                        <th> Author</th>
+                        <th> ISBN</th>
+                        <th> ISBN</th>
+
+                        <th></th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>*@
 
 
 
-@section Scripts{ 
+
+@section Scripts{
     <script src="~/js/accountList.js"></script>
 }
 
