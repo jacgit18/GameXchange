@@ -8,7 +8,6 @@ namespace GameXchange.Model
 {
     public class AccountDbGenerator
     {
-
         [Key]
         public int Id { get; set; }
 
@@ -21,7 +20,7 @@ namespace GameXchange.Model
         public string PhoneNumber { get; set; }
         public string RegisterDate { get; set; }
 
-
+        public string Version { get; set; }
 
     }
 }

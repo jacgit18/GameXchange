@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GameXchange.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20200408003438_changespace")]
-    partial class changespace
+    [Migration("20200428221316_newVTB1")]
+    partial class newVTB1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -47,6 +47,9 @@ namespace GameXchange.Migrations
 
                     b.Property<string>("UserName")
                         .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Version")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");

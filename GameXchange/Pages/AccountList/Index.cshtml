@@ -40,6 +40,9 @@
                             <label asp-for="AccountDbGenerators.FirstOrDefault().RegisterDate"></label>
                         </th>
                         <th>
+                            <label asp-for="AccountDbGenerators.FirstOrDefault().Version"></label>
+                        </th>
+                        <th>
 
                         </th>
                     </tr>
@@ -66,6 +69,9 @@
                     </td>
                     <td>
                         @Html.DisplayFor(m => item.RegisterDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(m => item.Version)
                     </td>
                     <td>
                         <button asp-page-handler="Delete" asp-route-id="@item.Id" onclick="return confirm('Are you sure you want to delete?')" class="btn btn-danger btn-sm">Delete</button>
