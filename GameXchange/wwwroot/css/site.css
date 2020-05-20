@@ -12,6 +12,9 @@ a {
   color: #0366d6;
 }
 
+
+
+
 .btn-primary {
   color: #fff;
   background-color: #1b6ec2;
@@ -30,9 +33,9 @@ html {
   font-size: 14px;
 }
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+    html {
+        font-size: 16px;
+    }
 }
 
 .border-top {
@@ -79,3 +82,4 @@ body {
     top: 60em;
     left: 0;
 }
+
