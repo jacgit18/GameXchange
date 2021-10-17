@@ -2,7 +2,7 @@
 Game trading service
 
 
-![GameXchange](https://user-images.githubusercontent.com/59297307/125382712-2ad88600-e364-11eb-956c-6a697afbd470.png)
+![Alt text](GameXchange/game-xchange.png?raw=true "Systemm Design View")
 
 
 
