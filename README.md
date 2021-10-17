@@ -23,7 +23,6 @@ As a gamer, I was thinking about when I used to buy games at GameStop and how I 
 - Javascript
 
 # Getting Started:
-1.
-
+I’m currently refactoring a few things. I will be updating this section soon. Thank you for your patience.
 
 
