@@ -7,7 +7,7 @@ As a gamer, I was thinking about when I used to buy games at GameStop and how I 
                                   
 ### Description
 
-GameXchange - Trade Games Online 
+GameXchange - Trade Games Online. 
 A web app that helps people trade video games online with unique game keys.
 
 - Lead and implemented agile software development best practices with a frontend and backend team.
